@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+	<title>Sign Up</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="public/BrewBuddies.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" href="favicon-16x16.png">
+	<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <!-- <Files “*.json”> Header set Access-Control-Allow-Origin “*” </Files>  -->
+</head>
+
+<body>
+	<header id="header">
+		<h1>Beers with Peers</h1>
+    </header>
+    <div class="signup-container">
+        <div class="login-content" style="text-align: center;">
+            <h2 style="text-align: center; color: black;">Sign up with us!</h2>
+            <p style="color: #000000; width: 28%; margin: 0 auto;">Join a community of over 10,000 beer lovers, explore new options and make new friends! </p>
+            <form id="login" onsubmit="return validate();" action='signup' method='POST'>
+                <div class="qn">
+                    <label for="username">Username: </label>
+                    <input class="effect" type="text" name="username" required>
+                </div>
+                <div class="qn">
+                    <label for="password">Password: </label>
+                    <input class="effect" type="password" name="password" required>
+                </div>
+                <div class="qn">
+                    <input type="submit" id="login-btn" name="login-btn" value="Sign Up">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function validate() {
+            let un = document.getElementsByName("username")[0].value;
+            let pw = document.getElementsByName("password")[0].value;
+            if (pw.length < 8) {
+                pw = "";
+                alert("Your password needs to have at least 8 characters.")
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+</body>
+</html>

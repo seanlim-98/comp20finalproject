@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+	<title>Login</title>
+    <meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="./public/BrewBuddies.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" href="./favicon-16x16.png">
+	<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <!-- <Files “*.json”> Header set Access-Control-Allow-Origin “*” </Files>  -->
+</head>
+
+<body>
+	<header id="header">
+		<h1>Beers with Peers</h1>
+    </header>
+    <div class="login-container">
+        <div class="login-content" style="text-align: center;">
+            <h2 style="text-align: center;">Log in to Beers with Peers!</h2>
+            <form id="login" action="auth" method="POST">
+                <div class="qn">
+                    <label for="username">Username: </label>
+                    <input class="effect" type="text" name="username" required>
+                </div>
+                <div class="qn">
+                    <label for="password">Password: </label>
+                    <input class="effect" type="password" name="password" required>
+                </div>
+                <div class="qn">
+                    <input type="submit" id="login-btn" name="login-btn" value="Log in">
+                </div>
+            </form>
+            <p style="color: #000000; margin-to: -10px;">Don't have an account? Sign up <a class="signup-redirect" style="color:blue;"href="./signup.html">here!</a></p>
+        </div>
+    </div>
+    <script>
+        function validate() {
+            let un = document.getElementsByName("username")[0].value;
+            let pw = document.getElementsByName("password")[0].value;
+            if (pw.length < 8) {
+                pw = "";
+                alert("Your password needs to have at least 8 characters.")
+                return false;
+            }
+
+            document.location = "public/index.html";
+
+            // Check database for match
+            // If username doesn't exist in database, return false and error message
+            // If mismatch, return false and error message
+            // If not, log them in as user in current session
+            return true;
+        }
+    </script>
+
+</body>
+</html>

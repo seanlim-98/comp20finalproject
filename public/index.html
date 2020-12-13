@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Beers with Peers</title>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" type="text/css" href="../public/BrewBuddies.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="icon" href="../favicon-16x16.png">
+  <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+  <!-- <Files “*.json”> Header set Access-Control-Allow-Origin “*” </Files>  -->
+</head>
+<body>
+
+  <header id="header">
+      <div id="username">&nbsp;</div>
+      <h1>Beer Brewing Buddies</h1>
+  </header>
+
+  <div id="messy">
+      <div id="messy-v">
+          <input type="button" id="ss" value="I confirm I am 21 or older">
+      </div>
+  </div>
+
+  <form id="form1" method="GET" action="functionality">
+      <input type="submit" id="compare" value="Compare with Friends"> 
+      <input type="button" id="liked" value="See Liked Recipies">
+      <input type="text" id="comparison" name="is_comparing" value="yes_comparing" style="display: none;"> 
+      <input type="text" id="user" name="u1" value="mgm" style="display: none;">
+      <input type="text" id="friend" name="u2" value="sl" style="display: none;">
+  </form>
+
+  <ul id="data">Loading...</ul>
+
+  <div class="results">   </div>
+
+
+  <footer id="footer">
+      <input type="button" id="back" value="Back to Swiping">
+      <!-- <input type="button" id="dislike" value="clear"> -->
+      <!-- <input type="button" id="like" value="favorite"> -->
+      <form id="form1" method="GET" action="/functionality">
+          <input type="text" id="usernameForm1" name= "uf1" value="-" style="display: none;">
+          <input type="text" id="currBeerForm1" name= "cbeer" value="-" style="display: none;">
+          <input type="text" id="addLikedForm1" name="is_adding_liked" value="not_liking" style="display: none;">
+          <input type="submit" id="dislike" value="clear">
+          <input type="submit" id="like" value="favorite">
+      </form>
+      <div id="likedBeersArr"></div>
+  <footer>
+</body>
+<script src="../client.js"> </script>
+
+</html>
